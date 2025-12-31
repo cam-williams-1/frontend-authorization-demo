@@ -3,7 +3,7 @@ import { useState } from "react";
 import Logo from "./Logo";
 import "./styles/Register.css";
 
-const Register = () => {
+const Register = ({ handleRegistration }) => {
   const [data, setData] = useState({
     username: "",
     email: "",
@@ -12,6 +12,7 @@ const Register = () => {
   });
 
   const handleChange = (e) => {
+    // identifies name property of data you want to change
     const { name, value } = e.target;
     setData((prevData) => ({
       ...prevData,
@@ -19,11 +20,16 @@ const Register = () => {
     }));
   };
 
+  const onRegistration = (event) => {
+    event.preventDefault();
+    handleRegistration(data);
+  };
+
   return (
     <div className="register">
       <Logo title={"CryptoDucks"} />
       <p className="register__welcome">Please register.</p>
-      <form className="register__form">
+      <form className="register__form" onSubmit={onRegistration}>
         <label htmlFor="username">Username:</label>
         <input
           id="username"

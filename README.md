@@ -8,3 +8,8 @@ to demonstrate the frontend authorization and authentication.
 Clone the repo, install node modules, and run `npm run dev` to get started. The
 starting code is found in the `main` branch. The other branches contain the
 solution code for each lesson.
+
+To Remember
+
+- npm run dev to start
+-
